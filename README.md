@@ -1,11 +1,10 @@
-# Code Review Agent with Learning Memory
+# Scout
 
 An intelligent code review system that learns from your feedback to provide better suggestions over time.
 
 ## Features
 
 - 🔍 **Code Review**: Analyzes code diffs from GitHub PRs or local git repos
-- 🤖 **AI-Powered**: Uses Llama 3.1 8B (via Ollama) for intelligent code analysis
 - 🧠 **Learning Memory**: Stores accepted/rejected suggestions in vector DB (ChromaDB)
 - 📈 **Adaptive**: Improves review style based on your feedback patterns
 - 🌐 **Web Interface**: Simple, clean UI for viewing reviews and providing feedback
@@ -14,7 +13,7 @@ An intelligent code review system that learns from your feedback to provide bett
 ## Architecture
 
 - **Backend**: Python + FastAPI
-- **LLM**: Ollama with Llama 3.1 8B
+- **LLM**: Ollama with Llama 3.1 8B standard, modular design
 - **Vector DB**: ChromaDB for learning memory
 - **Frontend**: Vanilla JavaScript + HTML/CSS
 - **GitHub**: PyGithub for API integration

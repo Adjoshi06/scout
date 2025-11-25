@@ -44,10 +44,7 @@ chroma_db/
 # OS
 .DS_Store
 Thumbs.db
-env.example
-QUICKSTART.md
-README.md
-requirements.txt
+
 
 
 

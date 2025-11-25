@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Agent</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Code Review Agent</h1>
+            <p>Intelligent code review with learning memory</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="review">Review</button>
+            <button class="tab-btn" data-tab="history">History</button>
+            <button class="tab-btn" data-tab="stats">Statistics</button>
+        </nav>
+
+        <!-- Review Tab -->
+        <div id="review-tab" class="tab-content active">
+            <div class="input-section">
+                <h2>Start New Review</h2>
+                <div class="input-group">
+                    <label for="review-source">Source:</label>
+                    <select id="review-source">
+                        <option value="github">GitHub PR</option>
+                        <option value="diff">Paste Diff</option>
+                    </select>
+                </div>
+                <div id="github-input" class="input-group">
+                    <label for="github-url">GitHub PR URL:</label>
+                    <input type="text" id="github-url" placeholder="https://github.com/owner/repo/pull/123">
+                </div>
+                <div id="diff-input" class="input-group" style="display: none;">
+                    <label for="diff-content">Diff Content:</label>
+                    <textarea id="diff-content" rows="10" placeholder="Paste your git diff here..."></textarea>
+                </div>
+                <button id="start-review-btn" class="btn-primary">Start Review</button>
+            </div>
+
+            <div id="review-results" class="review-results" style="display: none;">
+                <h2>Review Results</h2>
+                <div id="review-summary" class="review-summary"></div>
+                <div id="suggestions-list" class="suggestions-list"></div>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <p>⏳ Generating review... This may take 30-60 seconds.</p>
+            </div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="history-tab" class="tab-content">
+            <h2>Recent Reviews</h2>
+            <div id="reviews-list" class="reviews-list"></div>
+        </div>
+
+        <!-- Stats Tab -->
+        <div id="stats-tab" class="tab-content">
+            <h2>Learning Statistics</h2>
+            <div id="stats-content" class="stats-content"></div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedback-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Provide Feedback</h3>
+            <div class="feedback-actions">
+                <button class="btn-accept" data-action="accept">Accept</button>
+                <button class="btn-reject" data-action="reject">Reject</button>
+                <button class="btn-edit" data-action="edit">Edit</button>
+            </div>
+            <div id="reject-reason" style="display: none;">
+                <label for="reason-text">Reason for rejection:</label>
+                <textarea id="reason-text" rows="3"></textarea>
+            </div>
+            <div id="edit-suggestion" style="display: none;">
+                <label for="edited-text">Edit suggestion:</label>
+                <textarea id="edited-text" rows="5"></textarea>
+            </div>
+            <button id="submit-feedback-btn" class="btn-primary">Submit Feedback</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
+

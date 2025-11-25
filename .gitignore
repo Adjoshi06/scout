@@ -48,10 +48,7 @@ env.example
 QUICKSTART.md
 README.md
 requirements.txt
-run.py
-frontend/app.js
-frontend/index.html
-frontend/styles.css
+
 
 
 

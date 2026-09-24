@@ -1,7 +1,7 @@
 """
 Feedback processing service.
 """
-from services.vector_store import VectorStore
+from backend.services.vector_store import VectorStore
 
 class FeedbackService:
     """Service for processing user feedback."""

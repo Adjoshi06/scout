@@ -131,7 +131,7 @@ class VectorStore:
         try:
             # Find the suggestion document
             results = self.suggestions_collection.get(
-                where={"review_id": review_id, "suggestion_id": suggestion_id}
+                where={"$and": [{"review_id": review_id}, {"suggestion_id": suggestion_id}]}
             )
             
             if results["ids"]:

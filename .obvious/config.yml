@@ -1,0 +1,6 @@
+# obvious repo policy
+repository: Adjoshi06/scout
+defaultBranch: master
+merge:
+  method: squash
+  requireHumanApproval: true
